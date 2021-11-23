@@ -6,12 +6,7 @@ import ExpenseItems  from './ExpenseItems/ExpenseItems';
 import ExpenseForm  from './ExpenseItems/expenseForm/expenseForm';
 
 function App() {
-  const saveChangeHandeler=(data)=>{
-    console.log("Inside APP JS and Data is ")
-    console.log(data);
-
-  
-  }
+ 
    const [title,setTitle]=useState()
    const [date ,setDate]=useState()
    const [price ,setPrice]=useState()
@@ -22,6 +17,18 @@ function App() {
     {title:" I Phone", price:"$12500",date:"10 April 2021"},
     {title:" I Pad ", price:"$2500",date:"20 march 2021"}
   ]
+    const [expenses ,setExpenses]=useState(expense)
+
+    const saveChangeHandeler=(data)=>{
+      console.log("Inside APP JS and Data is ")
+      console.log(data);
+      setExpenses((prevExpenses)=>{
+        return [...prevExpenses,data]
+      })
+
+  
+    
+    }
 
   return (
     <div className="App">
@@ -40,7 +47,10 @@ function App() {
         </a>
     
         <ExpenseForm onSaveChanges={saveChangeHandeler}/>
-        {expense.map(ele=><ExpenseItems title={ele.title} price={ele.price} date={ele.date}/>)}
+        {/* {expense.map(ele=><ExpenseItems title={ele.title} price={ele.price} date={ele.date}/>)} */}
+        {expenses.map((expense)=>{
+          return <ExpenseItems title={expense.title} price={expense.price} date={expense.date}/>
+        })}
 
         {/* <ExpenseItems title ={expense[0].title} price={expense[0].price} date={expense[0].date} />
         <ExpenseItems title ={expense[1].title} price={expense[1].price} date={expense[1].date} />

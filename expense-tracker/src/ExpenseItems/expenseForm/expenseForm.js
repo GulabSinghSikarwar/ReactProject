@@ -7,16 +7,20 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("")
   const [enteredPrice, setEnteredPrice] = useState("")
   const [enteredDate, setenteredDate] = useState("")
+  
   const submitHandeler = (event) => {
     event.preventDefault()
     const newExpenses={
       title:enteredTitle,
       price:enteredPrice,
-      date:enteredDate
+      date:new Date(enteredDate)
     }
     console.log(`Inside Form ${newExpenses}`)
     console.log(newExpenses);
     props.onSaveChanges(newExpenses)
+
+
+
 
   }
   const titleChangeHandeler=(event)=>{
