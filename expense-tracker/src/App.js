@@ -25,7 +25,6 @@ function App() {
       setExpenses((prevExpenses)=>{
         return [...prevExpenses,data]
       })
-
   
     
     }
@@ -47,16 +46,15 @@ function App() {
         </a>
     
         <ExpenseForm onSaveChanges={saveChangeHandeler}/>
-        {/* {expense.map(ele=><ExpenseItems title={ele.title} price={ele.price} date={ele.date}/>)} */}
         {expenses.map((expense)=>{
           return <ExpenseItems title={expense.title} price={expense.price} date={expense.date}/>
         })}
-
         {/* <ExpenseItems title ={expense[0].title} price={expense[0].price} date={expense[0].date} />
         <ExpenseItems title ={expense[1].title} price={expense[1].price} date={expense[1].date} />
         <ExpenseItems title ={expense[2].title} price={expense[2].price} date={expense[2].date} />
         */}
-      </header>
+
+ </header>
     </div>
   );
 }
