@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 import Button from '../../UI/Button/Button';
 import './CourseInput.css';
+<<<<<<< HEAD
 // just check test 
+=======
+// just check which is root and which is local
+>>>>>>> styledComponents
 const CourseInput = props => {
 
   const [enteredValue, setEnteredValue] = useState('');
@@ -30,11 +34,11 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
+      <div className={`form-control ${!isValid?'invalid':''}`}>
         <label
             style={{color:isValid?"black":"maroon"}}>Course Goal</label>
         <input type="text"
-         style={{backgroundColor:!isValid?"salmon":"transparent"}}
+
                onChange={goalInputChangeHandler} />
       </div>
       <Button type="submit">Add Goal</Button>
