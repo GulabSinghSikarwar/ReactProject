@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Button from '../../UI/Button/Button';
 import './CourseInput.css';
-// just check
+// just check which is root and which is local
 const CourseInput = props => {
 
   const [enteredValue, setEnteredValue] = useState('');
