@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 import Button from '../../UI/Button/Button';
 import './CourseInput.css';
-<<<<<<< HEAD
+
 // just check test 
-=======
+
 // just check which is root and which is local
->>>>>>> styledComponents
+
 const CourseInput = props => {
 
   const [enteredValue, setEnteredValue] = useState('');
