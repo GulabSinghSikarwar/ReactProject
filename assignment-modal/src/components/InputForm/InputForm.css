@@ -6,9 +6,12 @@
 }
 .form-control-elements input{
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 23px;
     border-radius: 2%;
     background-color: aliceblue;
+    padding: 5px 15px 5px 15px;
+    color: #120E43;
+    border: white solid 10px ;
 
 }
 .form-control-elements{
@@ -18,5 +21,16 @@
     border:white solid 2px;
     padding: 25px 50px 25px 50px ;
     border-radius: 15%;
+
+}
+.form-control-elements button{
+    background-color: white;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 5%;
+    padding: 5px 15px 5px 15px;
+    font-family: "Arial Black";
+    color: #120E43;
+    border: white solid 5px ;
 
 }
