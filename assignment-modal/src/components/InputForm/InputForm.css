@@ -1,0 +1,22 @@
+.form-control-elements label{
+    font-weight: bolder;
+    font-size: 35px;
+    margin:0px 25px 25px  0px ;
+
+}
+.form-control-elements input{
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 2%;
+    background-color: aliceblue;
+
+}
+.form-control-elements{
+    margin-top: 50px;
+}
+.form-control{
+    border:white solid 2px;
+    padding: 25px 50px 25px 50px ;
+    border-radius: 15%;
+
+}
