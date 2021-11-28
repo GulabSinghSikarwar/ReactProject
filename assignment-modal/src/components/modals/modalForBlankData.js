@@ -12,7 +12,7 @@ const ModalForBlankData=()=>{
               </div>
               <div className={styles['modal-content']}>
                   <p>
-                      Enter the appropriate  data. Your Data is Blank
+                      Enter the appropriate  data. Your Data is Blank !!!
 
                   </p>
 

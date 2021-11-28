@@ -5,18 +5,20 @@ import NegativeDataModal from './modals/modalForNegativeData'
 
 const Container=()=>{
 return(
-    <div>
+    <div >
 
+<div>
 
-        <div  style={{margin:"0px  0px 25px 0px" ,fontWeight:"bold",textTransform:"Uppercase"}}>
+    <div  style={{margin:"0px  0px 25px 0px" ,fontWeight:"bold",textTransform:"Uppercase"}}>
 
-            WelCome Users
-        </div>
+        WelCome Users
+    </div>
 
-        <ModalForBlankData/>
-        <NegativeDataModal/>
+    <ModalForBlankData/>
+    <NegativeDataModal/>
 
-        <InputForm/>
+    <InputForm/>
+</div>
     </div>
 )
 }
