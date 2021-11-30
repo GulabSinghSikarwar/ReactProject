@@ -12,7 +12,7 @@ const NegativeDataModal=()=>{
                 </div>
                 <div className={styles['modal-content']}>
                     <p>
-                        Age Cannot be Negative
+                        Age Cannot be Negative !!!
 
                     </p>
 
