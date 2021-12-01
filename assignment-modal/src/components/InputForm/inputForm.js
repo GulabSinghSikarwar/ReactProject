@@ -5,6 +5,16 @@ import  Button from '../UI/Button'
 
 const  InputForm=()=>{
     
+ const [name,setName]=useState('')
+ const [age,setAge]=useState('')
+    let data={
+     Name:name,
+     Age:age
+    }
+    const nameChangeHandeler=(event)=>{
+     setName(event.target.value)
+    }
+
 
 
 
@@ -12,7 +22,7 @@ const  InputForm=()=>{
         <div className="form-control">
             <div className="form-control-elements">
                 <label>Name :</label>
-                <input type="text" name={"Name"}/>
+                <input type="text" name={"Name"} onChange={nameChangeHandeler}/>
 
 
             </div>

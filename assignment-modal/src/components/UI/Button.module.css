@@ -1,0 +1,8 @@
+.button:hover{
+    background-color: #120E43;
+    color: white;
+}
+.button:active{
+    color: maroon;
+    background: aliceblue;
+}
