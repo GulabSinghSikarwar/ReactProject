@@ -3,7 +3,7 @@ import {React,useState}  from "react";
 import  './InputForm.css'
 import  Button from '../UI/Button'
 
-const  InputForm=()=>{
+const  InputForm=(props)=>{
     
  const [name,setName]=useState('')
  const [age,setAge]=useState('')
@@ -14,30 +14,50 @@ const  InputForm=()=>{
     const nameChangeHandeler=(event)=>{
      setName(event.target.value)
     }
+    const ageChangeHandeler=(event)=>{
+     setAge(parseInt(event.target.value))
+
+
+    }
+
+    const onSubmitHandeler=()=>{
+     alert("We are in input form")
+        console.log(data)
+
+        // now We are suppose to pass this data to container
+        props.onRecieveData(data);
+
+
+
+    }
 
 
 
 
     return(
-        <div className="form-control">
-            <div className="form-control-elements">
-                <label>Name :</label>
-                <input type="text" name={"Name"} onChange={nameChangeHandeler}/>
+       <div>
+
+               <div className="form-control">
+                   <div className="form-control-elements">
+                       <label>Name :</label>
+                       <input type="text" name={"Name"} onChange={nameChangeHandeler}/>
 
 
-            </div>
-            <div className="form-control-elements">
-                <label>Age:</label>
-                <input type={"number"} name={"Age"}/>
+                   </div>
+                   <div className="form-control-elements">
+                       <label>Age:</label>
+                       <input type={"number"} name={"Age"}  onChange={ageChangeHandeler}/>
 
 
-            </div>
-            <div className={"form-control-elements"}>
-                <Button/>
+                   </div>
+                   <div className={"form-control-elements"}>
+                       <Button onSubmit={onSubmitHandeler}/>
 
-            </div>
+                   </div>
 
-        </div>
+               </div>
+
+       </div>
     )
 }
 export default  InputForm;

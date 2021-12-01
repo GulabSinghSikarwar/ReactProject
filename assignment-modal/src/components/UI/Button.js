@@ -1,10 +1,21 @@
 import React from "react";
 import styles from './Button.module.css'
 
-const Button=()=>{
+const Button=(props)=>{
+     const onSubmitHandeler=(event)=>{
+
+         event.preventDefault();
+         props.onSubmit();
+
+
+
+     }
+
 return(
     <div>
-        <button type={"submit"} className={styles.button} >SUBMIT</button>
+     <form onSubmit={onSubmitHandeler}>
+         <button type={"submit"} className={styles.button} >SUBMIT</button>
+     </form>
     </div>
 )
 }

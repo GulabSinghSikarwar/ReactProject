@@ -1,9 +1,9 @@
 import React from "react";
 import styles from './ModalsForNegativeAge.module.css'
 
-const NegativeDataModal=()=>{
+const NegativeDataModal=(props)=>{
     return(
-        <div  className={styles.background}>
+        <div  className={styles.background} style={{visibility:(props.isNegState)?"unset":"hidden"}}>
             <div className={styles.modal}>
 
                 <div className={styles['modal-heading']}>
@@ -18,7 +18,7 @@ const NegativeDataModal=()=>{
 
                 </div>
                 <div className={styles['modal_button']}>
-                    <button> OKAY</button>
+                    <button onClick={props.clearState}> OKAY</button>
 
                 </div>
             </div>
