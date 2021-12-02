@@ -21,7 +21,7 @@ const  InputForm=(props)=>{
     }
 
     const onSubmitHandeler=()=>{
-     alert("We are in input form")
+
         console.log(data)
 
         // now We are suppose to pass this data to container
