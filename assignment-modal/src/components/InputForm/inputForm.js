@@ -9,7 +9,7 @@ const  InputForm=(props)=>{
  const [age,setAge]=useState('')
     let data={
      Name:name,
-     Age:age
+     Age:parseInt(age)
     }
     const nameChangeHandeler=(event)=>{
      setName(event.target.value)

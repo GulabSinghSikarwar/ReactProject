@@ -3,9 +3,12 @@ import styles from './user.module.css'
 
 
 const Users=(props)=>{
+    const deleteCard=()=>{
+        props.deleteCard(props.id)
+    }
 
     return(
-        <div className={styles.card}>
+        <div className={styles.card} onClick={deleteCard}>
             <div className={styles.heading}>
               <h1>
                   User Info
@@ -15,6 +18,7 @@ const Users=(props)=>{
              <div>  Name :{props.Name}</div>
 
                <div>  Age :{props.Age}</div>
+               <div>  Id :{props.id}</div>
 
 
 

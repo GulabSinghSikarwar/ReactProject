@@ -6,6 +6,8 @@ import Users from "./users/users";
 
 
 const Container=()=>{
+    var id=0;
+
      const [isBlank,setIsBlank]=useState(false)
       const [isNeg,setIsNeg] =useState(false)
     const users=[];
@@ -19,7 +21,7 @@ const Container=()=>{
 
 
      //    now we will change the state  of blank data
-     if (data.Name.trim().length===0||data.Age.toString().trim().length===0)
+     if (data.Name.trim().length===0||isNaN(data.Age))
      {
          console.log("Data is Blank!!")
          setIsBlank(true);
@@ -33,9 +35,17 @@ const Container=()=>{
          console.log("State Updated")
          return;
      }
-         setNewUsers((prev)=>{
-             return[...prev,data]
-         })
+        if(isBlank===false && isNeg===false)
+        {
+            console.log(`
+            isBlank : ${isBlank}
+            isNeg : ${isBlank}
+
+            `)
+            setNewUsers((prev)=>{
+                return[...prev,data]
+            })
+        }
      }
     const onClearingBlankState=()=>{
          setIsBlank(!isBlank);
@@ -48,6 +58,14 @@ const Container=()=>{
         setIsNeg(!isNeg)
 
         console.log(" state changes !!  all is clear ")
+    }
+    const deleteCard=(index)=>{
+        var afterDeletionUsers=newUsers.filter((value)=>{
+            return value.Age!=newUsers[index].Age
+        })
+        setNewUsers(afterDeletionUsers)
+
+        console.log(afterDeletionUsers)
     }
 return(
     <div >
@@ -65,8 +83,15 @@ return(
     <InputForm onRecieveData={dataHandeler}/>
 
 
-    {newUsers.map((user)=>{
-       return  <Users Name={user.Name} Age={user.Age} key={parseInt((Math.random()*100000000000000000)).toString()}/>
+    {
+
+
+        newUsers.map((user)=>{
+       return  <Users Name={user.Name}
+                      id={id++}
+                      deleteCard={deleteCard}
+                      Age={user.Age}
+                      key={parseInt((Math.random()*100000000000000000)).toString()}/>
 
     })}
 </div>
