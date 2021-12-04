@@ -1,4 +1,4 @@
-import {React,useState}  from "react";
+import {React,useState,Fragment}  from "react";
 import InputForm from "./InputForm/inputForm";
 import ModalForBlankData from "./modals/modalForBlankData";
 import NegativeDataModal from './modals/modalForNegativeData'
@@ -25,7 +25,8 @@ const Container=()=>{
      {
          console.log("Data is Blank!!")
          setIsBlank(true);
-         console.log("State Updated")
+         console.log("State Updated and your blank state is :")
+         console.log("")
          return;
      }
      if(data.Age<0)
@@ -68,34 +69,26 @@ const Container=()=>{
         console.log(afterDeletionUsers)
     }
 return(
-    <div >
+   <Fragment>
 
-<div>
+       <ModalForBlankData isBlankState={isBlank} clearState={onClearingBlankState}/>
+       <NegativeDataModal isNegState={isNeg} clearState={onClearingNegState}/>
 
-    <div  style={{margin:"0px  0px 25px 0px" ,fontWeight:"bold",textTransform:"Uppercase"}}>
-
-        WelCome Users
-    </div>
-
-    <ModalForBlankData isBlankState={isBlank} clearState={onClearingBlankState}/>
-    <NegativeDataModal isNegState={isNeg} clearState={onClearingNegState}/>
-
-    <InputForm onRecieveData={dataHandeler}/>
+       <InputForm onRecieveData={dataHandeler}/>
 
 
-    {
+       {
 
 
-        newUsers.map((user)=>{
-       return  <Users Name={user.Name}
-                      id={id++}
-                      deleteCard={deleteCard}
-                      Age={user.Age}
-                      key={parseInt((Math.random()*100000000000000000)).toString()}/>
+           newUsers.map((user)=>{
+               return  <Users Name={user.Name}
+                              id={id++}
+                              deleteCard={deleteCard}
+                              Age={user.Age}
+                              key={parseInt((Math.random()*100000000000000000)).toString()}/>
 
-    })}
-</div>
-    </div>
+           })}
+   </Fragment>
 )
 }
 export default Container;
