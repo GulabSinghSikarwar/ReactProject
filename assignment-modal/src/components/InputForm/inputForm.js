@@ -12,7 +12,9 @@ const  InputForm=(props)=>{
      Age:parseInt(age)
     }
     const nameChangeHandeler=(event)=>{
+
      setName(event.target.value)
+   console.log(name);
     }
     const ageChangeHandeler=(event)=>{
      setAge(parseInt(event.target.value))
