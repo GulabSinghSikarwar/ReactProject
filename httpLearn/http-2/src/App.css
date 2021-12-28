@@ -1,0 +1,20 @@
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+   
+  align-items: center;
+  min-height: 75rem;
+  background-color: #120E43;
+
+
+}
+.cardContainer{
+  background-color: white;
+  min-width: 45rem;
+  margin: 45px 0px 0px 0px  ;
+  border-radius: 25px;
+  padding: 20px 45px  20px 20px  ;
+ 
+}

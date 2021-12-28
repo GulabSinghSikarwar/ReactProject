@@ -1,16 +1,19 @@
 import React from 'react'
+import Img from './programmer.png'
 import {Button, Card} from 'react-bootstrap'
-const User=()=>{
+const User=(props)=>{
 
     return (
 
-        <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
+        <Card style={{ width: '25rem' ,color:'black' }}>
+  <Card.Img variant="top" src={Img} />
   <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+    <Card.Title><h3> {props.email}</h3></Card.Title>
+    <Card.Text >
+<h3>User_Id: {props.id}</h3>
+<h3> First Name:  {props.fname}</h3>
+<h3> Last Name :{props.lname}</h3>
+
     </Card.Text>
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>

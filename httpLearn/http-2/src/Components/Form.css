@@ -1,0 +1,15 @@
+.form{
+    background-color: white;
+    padding: 45px 45px 50px 45px ;
+    min-height: 15rem;
+    border-radius: 55px;
+}
+.form label{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 0px 25px 0px ;
+}
+.form button{
+    font-weight: bold;
+    border-radius: 15px ;
+}
