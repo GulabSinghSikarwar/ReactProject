@@ -1,39 +1,60 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect, useCallback } from 'react'
 import AddData from './Components/Form';
 import './App.css'
 import { Button } from 'react-bootstrap';
 import TaskCard from './Components/taskCard';
+import Img from './Components/assets/Infinity-1s-200px.gif'
+import useHttp from './Components/customHooks/http-hook';
 
 
 const App = () => {
   const [task, setTask] = useState([]);
+  const [loading, setLoading] = useState(true)
+  const url = 'https://http-learning-b11d7-default-rtdb.firebaseio.com/Task.json';
+
+  
+  const  fetchRequest=useHttp()
 
 
+ 
   const sendData = async (data) => {
 
-    const respons = await
-      fetch('https://http-learning-b11d7-default-rtdb.firebaseio.com/Task.json',
-        {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-
-    const responseJsonData = await respons.json()
-    if (respons.ok) {
-      alert('Form Submit')
-      console.log(data);
-
+    const values = {
+      url: url,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: data
     }
 
+    // const {sendRequest: addData} = UseHttp();
+    //  calling the 
+    // const {sendRequest:fetchRequest} =
+    
+
+
+
+    fetchRequest(values)
+
+    // console.log(output);
+
+
+    // output.sendRequest(values);
+
+    // const { sendRequest: getData } = UseHttp()
+    // output.sendRequest({
+    //   url: url
+    // })
 
 
 
 
   }
+  useEffect(() => {
+    getData()
+
+  }, [])
   const getData = async () => {
+
     const response = await fetch('https://http-learning-b11d7-default-rtdb.firebaseio.com/Task.json')
 
 
@@ -50,6 +71,7 @@ const App = () => {
       )
     }
     if (response.ok) {
+      setLoading(false)
       alert("Data Retrieval successfull")
       console.log(data);
       setTask(data);
@@ -60,6 +82,8 @@ const App = () => {
   return (
     <div>
       <header>
+
+
         <h1>
           Hello world
         </h1>
@@ -75,20 +99,31 @@ const App = () => {
             borderRadius: '10px'
 
           }} >Get Data</Button>
-            <ul>
+          <ul>
+            {/*  loading iumg of data  */}
+            {
+              loading && <div>
+                <img src={Img} />
+                <h2>
+                  Loading....
+                </h2>
+              </div>
 
 
-{
-  
-  task.map((singleTask) => {
-    console.log( " Current singleTask :",singleTask);
-    return <li> <TaskCard id={singleTask.id} task={singleTask}/></li>
+            }
+            {/* here we will add loading image  */}
 
-  })
-}   
-  </ul>
+            {
+
+              task.map((singleTask) => {
+                console.log(" Current singleTask :", singleTask);
+                return <li> <TaskCard id={singleTask.id} task={singleTask} /></li>
+
+              })
+            }
+          </ul>
         </div>
-      
+
 
 
       </header>
