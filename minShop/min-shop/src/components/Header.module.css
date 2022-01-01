@@ -1,0 +1,31 @@
+.header {
+    overflow: hidden;
+  background-color: aqua;
+  border: 2px solid maroon;
+  /* position: sticky;
+  position: -webkit-sticky; */
+  top: 0;
+   
+}
+.header div{
+    display: block;
+    float: left;
+
+}
+.header div.right{
+    margin-top: 50px;
+    float: right;
+}
+.header h1{
+    margin-left: 400px;
+    font-size: 55px;
+    font-weight: bold;
+    margin-top: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.image{
+    width: 150px;
+    border-radius: 100px;
+    display:block;
+    
+}
