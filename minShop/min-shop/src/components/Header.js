@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Header.module.css'
-import Img from './OIP.jpg'
+import Img from './apple.png'
 import SignIn from "./SignButton/signIn"
 import HeaderCartButton from "./cart/HeaderCartButton";
 const Header = () => {

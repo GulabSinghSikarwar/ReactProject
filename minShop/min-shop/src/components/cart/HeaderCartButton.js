@@ -7,6 +7,7 @@ const HeaderCartButton = () => {
             <div>
             </div>
             <Button style={{
+                border:'black 2px solid ',
                 fontSize: "25px",
                 marginRight: '50px',
                 borderRadius: '10px',
